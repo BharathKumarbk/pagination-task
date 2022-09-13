@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="title">Universities In India</h2>
+  <ul *ngFor="let item of univ | paginate:{
+    itemsPerPage : tableSize,
+    currentPage:page,
+    totalItems : count}; let i = index" class="list-group">
+    <li class="list-group-item">
+      <h6>{{item.name}} </h6>
+      <a [href]="item.web_pages[0]" class="list-item" target="_blank">
+        {{item.web_pages[0]}}
+      </a>
+    </li>
+  </ul>
+  <div class="page">
+    <pagination-controls previousLabel="Previous" nextLabel="Next" (pageChange)="onPageDataChange($event)">
+    </pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<cdk-virtual-scroll-viewport itemSize="20" class="container">
+  <ul *cdkVirtualFor="let item of univ" class="list-group">
+    <li class="list-group-item">
+      <h6>{{item.name}} </h6>
+      <a [href]="item.web_pages[0]" class="list-item" target="_blank">
+        {{item.web_pages[0]}}
+      </a>
+    </li>
+  </ul>
+</cdk-virtual-scroll-viewport>
